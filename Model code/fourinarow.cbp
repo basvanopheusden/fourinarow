@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="fourinarow" />
+		<Option pch_mode="2" />
+		<Option compiler="mingw-w64" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/fourinarow" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="mingw-w64" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/fourinarow" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="mingw-w64" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-O3" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="bfs.cpp" />
+		<Unit filename="bfs.h" />
+		<Unit filename="board.h" />
+		<Unit filename="data_struct.cpp" />
+		<Unit filename="data_struct.h" />
+		<Unit filename="dfs.cpp" />
+		<Unit filename="features_all.cpp" />
+		<Unit filename="heuristic.cpp" />
+		<Unit filename="heuristic.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mcts.cpp" />
+		<Unit filename="mcts.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

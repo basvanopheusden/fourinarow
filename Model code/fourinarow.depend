@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1582312831 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+	"bfs.h"
+	<fstream>
+	<iomanip>
+	<random>
+
+1582312819 c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.h
+	"board.h"
+	<vector>
+
+1582312262 c:\users\bas\documents\sourcetree repos\fourinarow\model code\board.h
+	<iostream>
+	<cstdint>
+	<cstdlib>
+
+1582315499 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
+	"board.h"
+	"data_struct.h"
+	<algorithm>
+	<fstream>
+
+1582316560 c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.h
+	"board.h"
+	<vector>
+	<random>
+
+1582311938 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\dfs.cpp
+	"heuristic.h"
+
+1582312579 c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.h
+	"board.h"
+	<random>
+	<vector>
+	<map>
+
+1582311779 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\features_all.cpp
+	"board.h"
+	"heuristic.h"
+
+1582312864 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+	"heuristic.h"
+	"bfs.h"
+	<algorithm>
+	<fstream>
+
+1582316684 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\main.cpp
+	"heuristic.h"
+	"data_struct.h"
+
+1582312783 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\mcts.cpp
+	"mcts.h"
+	"heuristic.h"
+
+1481659767 c:\users\bas\documents\sourcetree repos\fourinarow\model code\mcts.h
+	"board.h"
+	"heuristic.h"
+	<vector>
+
