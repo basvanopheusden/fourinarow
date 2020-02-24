@@ -73,16 +73,16 @@ struct data_struct{
   vector<trial_2afc> alltrials_2afc;
   vector<trial_eval> alltrials_eval;
   data_struct(): Nplayers(0), Nboards(0){};
-  void add(board, uint64, bool, double, unsigned int);
-  void add_2afc(board, uint64, uint64, uint64, bool, int, int, double, unsigned int);
-  void add_eval(board, int, int, bool, double, unsigned int);
+  void add(board, uint64, bool, double, unsigned int,int);
+  void add_2afc(board, uint64, uint64, uint64, bool, int, int, double, unsigned int,int);
+  void add_eval(board, int, int, bool, double, unsigned int,int);
   void clear();
   void make_groups(int, mt19937_64);
   vector<unsigned int> select_boards(int,int);
   vector<unsigned int> select_boards(int,int,int);
-  void load_board_file(char*);
+  void load_data_from_directory(char*,int);
   void save_board_file(char*);
-  void load_board_file_ionatan(char*);
+  void load_board_file(char*,int,int);
 };
 
 #endif // DATA_STRUCT_H_INCLUDED

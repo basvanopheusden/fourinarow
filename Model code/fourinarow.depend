@@ -14,13 +14,13 @@
 	<cstdint>
 	<cstdlib>
 
-1582315499 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
+1582581822 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
 	"board.h"
 	"data_struct.h"
 	<algorithm>
 	<fstream>
 
-1582316560 c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.h
+1582581707 c:\users\bas\documents\sourcetree repos\fourinarow\model code\data_struct.h
 	"board.h"
 	<vector>
 	<random>
@@ -44,7 +44,7 @@
 	<algorithm>
 	<fstream>
 
-1582316684 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\main.cpp
+1582581769 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"data_struct.h"
 
