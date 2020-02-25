@@ -8,13 +8,12 @@ using namespace std;
 namespace bfs{
 
 class node{
-  private:
+  public:
     node** child;
     node* parent;
     node* best;
     unsigned int Nchildren;
     uint64 m;
-  public:
     board b;
     double val;
     int pess;
@@ -32,7 +31,7 @@ class node{
       m=0;
       pess=0;
       opt=0;
-      iteration=0;
+      iteration=-1;
     }
     ~node(){
       if(child){

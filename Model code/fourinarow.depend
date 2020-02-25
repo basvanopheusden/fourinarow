@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1582312831 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+1582583974 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.cpp
 	"bfs.h"
 	<fstream>
 	<iomanip>
 	<random>
 
-1582312819 c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.h
+1582583583 c:\users\bas\documents\sourcetree repos\fourinarow\model code\bfs.h
 	"board.h"
 	<vector>
 
@@ -28,8 +28,9 @@
 1582311938 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\dfs.cpp
 	"heuristic.h"
 
-1582312579 c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.h
+1582582907 c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.h
 	"board.h"
+	"bfs.h"
 	<random>
 	<vector>
 	<map>
@@ -38,15 +39,18 @@
 	"board.h"
 	"heuristic.h"
 
-1582312864 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+1582582850 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
 	"heuristic.h"
 	"bfs.h"
 	<algorithm>
 	<fstream>
 
-1582581769 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\main.cpp
+1582655559 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"data_struct.h"
+	"bfs.h"
+	<fstream>
+	<ctime>
 
 1582312783 source:c:\users\bas\documents\sourcetree repos\fourinarow\model code\mcts.cpp
 	"mcts.h"

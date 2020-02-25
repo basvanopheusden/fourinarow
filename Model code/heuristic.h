@@ -2,6 +2,7 @@
 #define HEURISTIC_H_INCLUDED
 
 #include "board.h"
+#include "bfs.h"
 #include <random>
 #include <vector>
 #include <map>
@@ -48,6 +49,7 @@ class heuristic{
     bernoulli_distribution K_dist;
     bernoulli_distribution D_dist;
     bool self;
+    bfs::node game_tree;
     heuristic();
     void get_params_from_file(char*,int,int);
     void get_params_from_array(double*);

@@ -278,7 +278,7 @@ zet heuristic::makerandommove(board b, uint64 m1,uint64 m2,bool player){
 }
 
 zet heuristic::makemove_bfs(board b,bool player){
-  bfs::node game_tree(b,evaluate(b),player,1);
+  game_tree = bfs::node(b,evaluate(b),player,1);
   bfs::node *n=&game_tree;
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;
@@ -305,7 +305,7 @@ zet heuristic::makemove_bfs(board b,bool player){
 }
 
 zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player){
-  bfs::node game_tree(b,evaluate(b),player,1);
+  game_tree = bfs::node(b,evaluate(b),player,1);
   bfs::node *n=&game_tree;
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;

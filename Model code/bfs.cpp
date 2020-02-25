@@ -18,7 +18,7 @@ node::node(board bstart,double v,bool p,int d){
   parent=NULL;
   best=NULL;
   Nchildren=0;
-  iteration=0;
+  iteration=-1;
   m=0;
   if(b.black_has_won())
     pess=opt=BLACK_WINS-depth,val=10000.0;
@@ -29,9 +29,10 @@ node::node(board bstart,double v,bool p,int d){
   else val=v,pess=WHITE_WINS+depth+1,opt=BLACK_WINS-depth-1;
 }
 
-void node::expand(vector<zet> candidate,int iteration){
+void node::expand(vector<zet> candidate,int n){
   Nchildren=candidate.size();
   if(Nchildren>0){
+    iteration = n;
     child=new node*[Nchildren];
     for(unsigned int i=0;i<Nchildren;i++){
       if(player==BLACK)
@@ -39,7 +40,6 @@ void node::expand(vector<zet> candidate,int iteration){
       else child[i]=new node(b+candidate[i],val-candidate[i].val,!player,depth+1);
       child[i]->parent=this;
       child[i]->m=candidate[i].zet_id;
-      child[i]->iteration = iteration;
     }
     get_opt();
     get_pess();
