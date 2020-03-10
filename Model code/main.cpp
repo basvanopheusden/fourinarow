@@ -46,6 +46,6 @@ int main(int argc, char* argv[]){
   h.get_params_from_file(params_filename,dat.alltrials[i].player_id,dat.alltrials[i].group);
   m=h.makemove_bfs(dat.alltrials[i].b,dat.alltrials[i].player);
   dat.alltrials[i].b.write(m);
-  write_eye_trace(&h.game_tree,output);
+  //write_eye_trace(&h.game_tree,output);
   output.close();
 }
