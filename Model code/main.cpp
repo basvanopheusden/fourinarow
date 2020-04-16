@@ -1,51 +1,69 @@
 #include "heuristic.h"
+#include "heuristic_nhp.h"
 #include "data_struct.h"
 #include "bfs.h"
 
 #include <fstream>
 #include <ctime>
 
-void add_to_expansion_vector(bfs::node* n,vector<bfs::node*>& expansion_order){
-  if(n->iteration>=0){
-    if(expansion_order.size()<n->iteration+1)
-      expansion_order.resize(n->iteration+1);
-    expansion_order[n->iteration]=n;
+bool play_nhp_game(heuristic& h_black, heuristic_nhp& h_white, bool verbose = false){
+  board b;
+  zet m;
+  while(!b.black_has_won() && !b.is_full()){
+      m = h_black.makemove_bfs(b,BLACK);
+      b.add(m);
+      if(verbose)
+        b.write();
+      m = h_white.makemove_bfs(b,WHITE);
+      b.add(m);
+      if(verbose)
+        b.write();
   }
-  for(int j=0;j<n->Nchildren;j++)
-    add_to_expansion_vector(n->child[j],expansion_order);
+  return b.black_has_won();
 }
 
-void write_eye_trace(bfs::node* tree,ostream& out){
-  vector<bfs::node*> expansion_order;
-  vector<int> trace;
-  add_to_expansion_vector(tree,expansion_order);
-  string s;
-  out<<uint64tobinstring(tree->b.pieces[BLACK])<<"\t"<<uint64tobinstring(tree->b.pieces[WHITE])<<endl;
-  for(int i=0;i<expansion_order.size();i++){
-    trace.clear();
-    for(bfs::node* n=expansion_order[i];n->parent!=NULL;n=n->parent)
-      trace.insert(trace.begin(),uint64totile(n->m));
-    for(unsigned int j=0;j<trace.size();j++)
-      out<<trace[j]<<"\t";
-    out<<endl;
+void test_nhp_agents(int N,int k){
+  ofstream output("../nhp_tournament_results.txt",ios::out);
+  heuristic_nhp h_black, h_white;
+  mt19937_64 global_generator;
+  global_generator.seed(unsigned(time(0)));
+  h_black.seed_generator(global_generator);
+  h_white.seed_generator(global_generator);
+  const char* param_filename = "../params.txt";
+  int i,j;
+  for(int n=0;n<N*N;n+=k){
+    i=n/N;
+    j=n%N;
+    h_black.get_params_from_file(param_filename,i/5,i%5+1);
+    h_black.c_self = 2.0;
+    h_black.c_opp = 0.0;
+    h_white.get_params_from_file(param_filename,j/5,j%5+1);
+    h_white.c_self = 0.0;
+    h_white.c_opp = 2.0;
+    output<<i<<"\t"<<j<<"\t"<<play_nhp_game(h_black,h_white,false)<<endl;
   }
+  output.close();
 }
+
 
 int main(int argc, char* argv[]){
   data_struct dat;
   heuristic h;
   mt19937_64 global_generator;
   global_generator.seed(unsigned(time(0)));
-  h.seed_generator(global_generator);
-  zet m;
-  char* direc = "C:/Users/Bas/Downloads/splits";
-  char* params_filename = "C:/Users/Bas/Google Drive/Bas Games/Analysis/Params/params_peak_final.txt";
-  dat.load_data_from_directory(direc,10);
-  ofstream output("eye_trace_model.txt",ios::out);
-  unsigned int i = 92;
-  h.get_params_from_file(params_filename,dat.alltrials[i].player_id,dat.alltrials[i].group);
-  m=h.makemove_bfs(dat.alltrials[i].b,dat.alltrials[i].player);
-  dat.alltrials[i].b.write(m);
+  //test_nhp_agents(1650,137);
+
+  /*const char* direc = "C:/Users/svo/Documents/fmri/splits/";
+  const char* board_filename = "C:/Users/svo/Documents/fmri/splits/boards_by_group.txt";
+  dat.load_data_from_directory(direc,39);
+  dat.save_board_file(board_filename);*/
+  //compute_fmri_values(h,dat,200);
+
+  //dat.load_board_file("C:/Users/svo/Documents/fmri/invalid_boards.csv",-1);
+  //compute_fmri_values_invalid(h,dat,40);
+
+  //ofstream output("eye_trace_model.txt",ios::out);
   //write_eye_trace(&h.game_tree,output);
-  output.close();
+  //output.close();
+  return 0;
 }

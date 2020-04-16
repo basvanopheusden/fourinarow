@@ -80,9 +80,9 @@ struct data_struct{
   void make_groups(int, mt19937_64);
   vector<unsigned int> select_boards(int,int);
   vector<unsigned int> select_boards(int,int,int);
-  void load_data_from_directory(char*,int);
-  void save_board_file(char*);
-  void load_board_file(char*,int,int);
+  void load_data_from_directory(const char*,int);
+  void save_board_file(const char*);
+  void load_board_file(const char*,int);
 };
 
 #endif // DATA_STRUCT_H_INCLUDED

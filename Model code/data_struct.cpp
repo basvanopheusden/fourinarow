@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 void data_struct::add(board b, uint64 m, bool player, double t, unsigned int p,int g){
@@ -34,35 +35,49 @@ void data_struct::clear(){
   Nplayers=0;
 }
 
-void data_struct::load_data_from_directory(char* dir_name,int Nparticipants){
+void data_struct::load_data_from_directory(const char* dir_name,int Nparticipants){
   char filename[128];
   for(int i=0;i<Nparticipants;i++){
-    for(int g=1;g<=5;g++){
+    /*for(int g=1;g<=5;g++){
       sprintf(filename,"%s/%d/%d.csv",dir_name,i+1,g);
       load_board_file(filename,i,g);
-    }
+      //cout<<i<<"\t"<<g<<"\t"<<filename<<endl;
+    }*/
+    sprintf(filename,"%s/%d/data.csv",dir_name,i+1);
+    load_board_file(filename,i);
   }
 }
 
-void data_struct::load_board_file(char* filename,int player_id, int group){
+void data_struct::load_board_file(const char* filename,int player_id = -1){
   ifstream input(filename,ios::in);
   uint64 bp,wp,m;
   string s;
   double t;
+  string line;
   int g;
+  int pid;
   if(input.is_open()){
     while(!input.eof()){
-      input>>bp>>wp;
-      input>>s;
-      input>>m;
-      input>>t;
-      input>>g;
-      add(board(bp,wp),m,(s=="Black")?BLACK:WHITE,t,player_id,g);
+      getline(input,line);
+      if(line.size()>0){
+        if(player_id==-1){
+          stringstream(line)>>bp>>wp>>s>>m>>t>>g>>pid;
+          add(board(bp,wp),m,(s=="Black")?BLACK:WHITE,t,pid,g);
+        }
+        else{
+          stringstream(line)>>bp>>wp>>s>>m>>t>>g;
+          add(board(bp,wp),m,(s=="Black")?BLACK:WHITE,t,player_id,g);
+        }
+      }
     }
+    input.close();
+  }
+  else{
+    cout<<"file not found: "<<filename<<endl;
   }
 }
 
-void data_struct::save_board_file(char* filename){
+void data_struct::save_board_file(const char* filename){
   ofstream output(filename,ios::out);
   board b;
   uint64 m;
@@ -71,8 +86,9 @@ void data_struct::save_board_file(char* filename){
     b=alltrials[i].b;
     m=alltrials[i].m;
     player=alltrials[i].player;
-    output<<(player==BLACK?"Black\t":"White\t")<<b.pieces[BLACK]<<"\t"<<b.pieces[WHITE]<<"\t"<<m<<endl;
+    output<<b.pieces[BLACK]<<"\t"<<b.pieces[WHITE]<<"\t"<<(player==BLACK?"Black\t":"White\t")<<m<<"\t"<<alltrials[i].thinking_time<<"\t"<<alltrials[i].group<<"\t"<<alltrials[i].player_id<<endl;
   }
+  output.close();
 }
 
 vector<unsigned int> data_struct::select_boards(int subject, int group){

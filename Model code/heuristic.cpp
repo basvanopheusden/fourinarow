@@ -48,10 +48,10 @@ bool pattern::isempty(uint64 m){
   return m & pieces_empty;
 }
 
-void heuristic::get_params_from_file(char* filename,int subject=0,int group=0){
+void heuristic::get_params_from_file(const char* filename,int subject=0,int group=0){
   ifstream input(filename,ios::in);
   string s;
-  double* params = new double[3*Nweights+7];
+  double params[3*Nweights+7];
   if(!input)
     cout<<"could not open input"<<endl;
   for(int i=0;i<5*subject+group-1;i++)
@@ -79,7 +79,7 @@ void heuristic::get_params_from_array(double* input){
   update();
 }
 
-void heuristic::get_features_from_file(char* filename){
+void heuristic::get_features_from_file(const char* filename){
   uint64 c,e;
   int i,n;
   ifstream input(filename,ios::in);
@@ -122,6 +122,8 @@ void heuristic::update(){
   lapse=bernoulli_distribution(lapse_rate);
   for(uint64 m=1;m!=boardend;m<<=1)
     vtile[m]=1.0/sqrt(pow(uint64totile(m)/BOARD_WIDTH-1.5,2) + pow(uint64totile(m)%BOARD_WIDTH-4.0,2));
+  c_self = 2.0*opp_scale/(1.0+opp_scale);
+  c_opp = 2.0/(1.0+opp_scale);
   update_weights();
 }
 
@@ -193,15 +195,8 @@ vector<zet> heuristic::get_moves(board& b, bool player, bool nosort=false){
   uint64 m,m1,m2;
   map<uint64,int> lookup;
   double deltaL=0.0;
-  double c_act,c_pass;
-  if(player==self){
-    c_act=2.0*opp_scale/(1.0+opp_scale);
-    c_pass=2.0/(1.0+opp_scale);
-  }
-  else{
-    c_act=2.0/(1.0+opp_scale);
-    c_pass=2.0*opp_scale/(1.0+opp_scale);
-  }
+  double c_act=(player==self)?c_self:c_opp;
+  double c_pass=(player==self)?c_opp:c_self;
   for(i=0;i<Nfeatures;i++)
     if(feature[i].is_active(b)){
       if(feature[i].contained(b,player))
@@ -277,9 +272,9 @@ zet heuristic::makerandommove(board b, uint64 m1,uint64 m2,bool player){
   return zet(m2,0.0,player);
 }
 
-zet heuristic::makemove_bfs(board b,bool player){
-  game_tree = bfs::node(b,evaluate(b),player,1);
-  bfs::node *n=&game_tree;
+zet heuristic::makemove_bfs(board b,bool player,bool save_tree){
+  game_tree = new bfs::node(b,evaluate(b),player,1);
+  bfs::node *n=game_tree;
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;
   vector<zet> candidates;
@@ -289,24 +284,31 @@ zet heuristic::makemove_bfs(board b,bool player){
     return makerandommove(b,player);
   remove_features();
   self=player;
-  while(iterations<max_iterations && t<tmax && !game_tree.determined()){
+  zet bestmove;
+  while(iterations<max_iterations && t<tmax && !game_tree->determined()){
     candidates=get_pruned_moves(n->b,n->player);
     n->expand(candidates,iterations);
-    n=game_tree.select();
+    n=game_tree->select();
     mold=m;
-    m=game_tree.bestmove().zet_id;
+    m=game_tree->bestmove().zet_id;
     if(mold==m)
       t++;
     else t=0;
     iterations++;
   }
   restore_features();
-  return game_tree.bestmove();
+  bestmove = game_tree->bestmove();
+  if(!save_tree){
+    delete(game_tree);
+    game_tree = NULL;
+  }
+  return bestmove;
 }
 
-zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player){
-  game_tree = bfs::node(b,evaluate(b),player,1);
-  bfs::node *n=&game_tree;
+zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player, bool save_tree){
+  game_tree = new bfs::node(b,evaluate(b),player,1);
+  bfs::node *n=game_tree;
+  zet bestmove;
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;
   vector<zet> candidates;
@@ -315,21 +317,26 @@ zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player){
     return makerandommove(b,m1,m2,player);
   remove_features();
   self=player;
-  game_tree.expand(get_moves(b,m1,m2,player),0);
-  n=game_tree.select();
-  m=game_tree.bestmove().zet_id;
+  game_tree->expand(get_moves(b,m1,m2,player),0);
+  n=game_tree->select();
+  m=game_tree->bestmove().zet_id;
   int iterations=1;
-  while(iterations<max_iterations && t<tmax && !game_tree.determined()){
+  while(iterations<max_iterations && t<tmax && !game_tree->determined()){
     candidates=get_pruned_moves(n->b,n->player);
     n->expand(candidates,iterations);
-    n=game_tree.select();
+    n=game_tree->select();
     mold=m;
-    m=game_tree.bestmove().zet_id;
+    m=game_tree->bestmove().zet_id;
     if(mold==m)
       t++;
     else t=0;
     iterations++;
   }
   restore_features();
-  return game_tree.bestmove();
+  bestmove = game_tree->bestmove();
+  if(!save_tree){
+    delete(game_tree);
+    game_tree = NULL;
+  }
+  return bestmove;
 }

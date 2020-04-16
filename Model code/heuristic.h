@@ -32,6 +32,7 @@ class heuristic{
     static const unsigned int Nweights=17;
     unsigned int Nfeatures;
     double stopping_thresh,pruning_thresh,gamma,lapse_rate,opp_scale;
+    double c_self,c_opp;
     double center_weight;
     double w_act[Nweights];
     double w_pass[Nweights];
@@ -49,11 +50,11 @@ class heuristic{
     bernoulli_distribution K_dist;
     bernoulli_distribution D_dist;
     bool self;
-    bfs::node game_tree;
+    bfs::node* game_tree;
     heuristic();
-    void get_params_from_file(char*,int,int);
+    void get_params_from_file(const char*,int,int);
     void get_params_from_array(double*);
-    void get_features_from_file(char*);
+    void get_features_from_file(const char*);
     void addfeature(uint64, int );
     void addfeature(uint64, uint64, int , int );
     void update();
@@ -68,8 +69,8 @@ class heuristic{
     zet makerandommove(board,uint64,uint64,bool);
     zet makemove_dfs(board,bool);
     zet makemove_dfs(board,uint64,uint64,bool);
-    zet makemove_bfs(board,bool);
-    zet makemove_bfs(board,uint64,uint64,bool);
+    zet makemove_bfs(board,bool,bool=false);
+    zet makemove_bfs(board,uint64,uint64,bool,bool=false);
     zet makemove_mcts(board,bool);
     int playout(board,bool);
     void remove_features();

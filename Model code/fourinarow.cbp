@@ -45,7 +45,9 @@
 		<Unit filename="data_struct.cpp" />
 		<Unit filename="data_struct.h" />
 		<Unit filename="dfs.cpp" />
+		<Unit filename="eye_trace.cpp" />
 		<Unit filename="features_all.cpp" />
+		<Unit filename="fmri_values.cpp" />
 		<Unit filename="heuristic.cpp" />
 		<Unit filename="heuristic.h" />
 		<Unit filename="main.cpp" />
