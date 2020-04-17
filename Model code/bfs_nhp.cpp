@@ -42,8 +42,8 @@ void nhp_node::expand(vector<zet> candidate,int n){
     child=new node*[Nchildren];
     for(unsigned int i=0;i<Nchildren;i++){
       if(player==BLACK)
-        child[i]=new node(b+candidate[i],val+candidate[i].val,!player,depth+1);
-      else child[i]=new node(b+candidate[i],val-candidate[i].val,!player,depth+1);
+        child[i]=new nhp_node(b+candidate[i],val+candidate[i].val,!player,depth+1);
+      else child[i]=new nhp_node(b+candidate[i],val-candidate[i].val,!player,depth+1);
       child[i]->parent=this;
       child[i]->m=candidate[i].zet_id;
     }

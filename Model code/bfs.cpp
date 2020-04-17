@@ -9,7 +9,6 @@
 #define DRAW 0
 using namespace bfs;
 
-#ifndef WHITE_CANNOT_WIN
 node::node(board bstart,double v,bool p,int d){
   b=bstart;
   depth=d;
@@ -20,6 +19,7 @@ node::node(board bstart,double v,bool p,int d){
   Nchildren=0;
   iteration=-1;
   m=0;
+  cout<<"normal node, d:\t"<<d<<endl;
   if(b.black_has_won())
     pess=opt=BLACK_WINS-depth,val=10000.0;
   else if(b.white_has_won())
@@ -40,36 +40,6 @@ void node::get_pess(){
   for(unsigned int i=0;i<Nchildren;i++)
     update_pess(child[i]);
 }
-#else
-node::node(board bstart,double v,bool p,int d){
-  b=bstart;
-  depth=d;
-  player=p;
-  child=NULL;
-  parent=NULL;
-  best=NULL;
-  Nchildren=0;
-  iteration=-1;
-  m=0;
-  if(b.black_has_won())
-    pess=opt=BLACK_WINS-depth,val=10000.0;
-  else if(b.is_full())
-    pess=opt=0,val=0.0;
-  else val=v,pess=0,opt=BLACK_WINS-depth-1;
-}
-
-void node::get_opt(){
-  opt=(player==BLACK?0:BLACK_WINS);
-  for(unsigned int i=0;i<Nchildren;i++)
-    update_opt(child[i]);
-}
-
-void node::get_pess(){
-  pess=(player==BLACK?0:BLACK_WINS);
-  for(unsigned int i=0;i<Nchildren;i++)
-    update_pess(child[i]);
-}
-#endif // WHITE_CANNOT_WIN
 
 void node::expand(vector<zet> candidate,int n){
   Nchildren=candidate.size();
@@ -131,13 +101,6 @@ bool node::update_pess(node* c){
   }
   return false;
 }
-#ifdef WHITE_CANNOT_WIN
-
-
-#else
-
-#endif
-
 
 void node::get_best_determined(){
   vector<node*> candidate;
@@ -170,8 +133,12 @@ node* node::select(){
 zet node::bestmove(){
   double v;
   uint64 m_best;
-  if(!best)
+  if(!best){
+    cout<<"oops"<<endl;
+    b.write();
+    cout<<Nchildren<<endl;
     return zet(0,val,player);
+  }
   if(determined()){
     get_best_determined();
     return zet(best->m,val,player);

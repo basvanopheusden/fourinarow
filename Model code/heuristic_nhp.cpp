@@ -4,6 +4,7 @@
 zet heuristic_nhp::makemove_bfs(board b,bool player,bool save_tree){
   game_tree = new bfs::nhp_node(b,evaluate(b),player,1);
   bfs::node *n=game_tree;
+  zet bestmove;
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;
   vector<zet> candidates;
@@ -13,7 +14,6 @@ zet heuristic_nhp::makemove_bfs(board b,bool player,bool save_tree){
     return makerandommove(b,player);
   remove_features();
   self=player;
-  zet bestmove;
   while(iterations<max_iterations && t<tmax && !game_tree->determined()){
     candidates=get_pruned_moves(n->b,n->player);
     n->expand(candidates,iterations);

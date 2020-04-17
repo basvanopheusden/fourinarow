@@ -48,18 +48,23 @@ bool pattern::isempty(uint64 m){
   return m & pieces_empty;
 }
 
-void heuristic::get_params_from_file(const char* filename,int subject=0,int group=0){
+
+void heuristic::get_params_from_file(const char* filename,int n){
   ifstream input(filename,ios::in);
   string s;
   double params[3*Nweights+7];
   if(!input)
     cout<<"could not open input"<<endl;
-  for(int i=0;i<5*subject+group-1;i++)
+  for(int i=0;i<n-1;i++)
     getline(input,s);
   for(unsigned int i=0;i<3*Nweights+7;i++)
     input>>params[i];
   get_params_from_array(params);
   input.close();
+}
+
+void heuristic::get_params_from_file(const char* filename,int subject,int group){
+    get_params_from_file(filename,5*subject+group);
 }
 
 void heuristic::get_params_from_array(double* input){
@@ -195,8 +200,8 @@ vector<zet> heuristic::get_moves(board& b, bool player, bool nosort=false){
   uint64 m,m1,m2;
   map<uint64,int> lookup;
   double deltaL=0.0;
-  double c_act=(player==self)?c_self:c_opp;
-  double c_pass=(player==self)?c_opp:c_self;
+  double c_pass=(player==self)?c_self:c_opp;
+  double c_act=(player==self)?c_opp:c_self;
   for(i=0;i<Nfeatures;i++)
     if(feature[i].is_active(b)){
       if(feature[i].contained(b,player))

@@ -53,6 +53,7 @@ class heuristic{
     bfs::node* game_tree;
     heuristic();
     void get_params_from_file(const char*,int,int);
+    void get_params_from_file(const char*,int);
     void get_params_from_array(double*);
     void get_features_from_file(const char*);
     void addfeature(uint64, int );
@@ -69,8 +70,8 @@ class heuristic{
     zet makerandommove(board,uint64,uint64,bool);
     zet makemove_dfs(board,bool);
     zet makemove_dfs(board,uint64,uint64,bool);
-    zet makemove_bfs(board,bool,bool=false);
-    zet makemove_bfs(board,uint64,uint64,bool,bool=false);
+    virtual zet makemove_bfs(board,bool,bool=false);
+    virtual zet makemove_bfs(board,uint64,uint64,bool,bool=false);
     zet makemove_mcts(board,bool);
     int playout(board,bool);
     void remove_features();

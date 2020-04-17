@@ -6,14 +6,17 @@
 #include <fstream>
 #include <ctime>
 
-bool play_nhp_game(heuristic& h_black, heuristic_nhp& h_white, bool verbose = false){
+bool play_nhp_game(heuristic_nhp& h_black, heuristic_nhp& h_white, bool verbose = false){
   board b;
   zet m;
-  while(!b.black_has_won() && !b.is_full()){
+  vector<zet> candidates;
+  while(!b.is_full()){
       m = h_black.makemove_bfs(b,BLACK);
       b.add(m);
       if(verbose)
         b.write();
+      if(b.black_has_won())
+        break;
       m = h_white.makemove_bfs(b,WHITE);
       b.add(m);
       if(verbose)
@@ -23,7 +26,7 @@ bool play_nhp_game(heuristic& h_black, heuristic_nhp& h_white, bool verbose = fa
 }
 
 void test_nhp_agents(int N,int k){
-  ofstream output("../nhp_tournament_results.txt",ios::out);
+  ofstream output("../nhp_tournament_results_with_lapse.txt",ios::out);
   heuristic_nhp h_black, h_white;
   mt19937_64 global_generator;
   global_generator.seed(unsigned(time(0)));
@@ -34,13 +37,18 @@ void test_nhp_agents(int N,int k){
   for(int n=0;n<N*N;n+=k){
     i=n/N;
     j=n%N;
-    h_black.get_params_from_file(param_filename,i/5,i%5+1);
+    h_black.get_params_from_file(param_filename,i);
+    h_black.lapse_rate = (i%20==0?1:(i%20==1?0.5+0.5*h_black.lapse_rate:h_black.lapse_rate));
+    h_black.update();
     h_black.c_self = 2.0;
     h_black.c_opp = 0.0;
-    h_white.get_params_from_file(param_filename,j/5,j%5+1);
+    h_white.get_params_from_file(param_filename,j);
+    h_white.lapse_rate = (j%20==0?1:(j%20==1?0.5+0.5*h_white.lapse_rate:h_white.lapse_rate));
+    h_white.update();
     h_white.c_self = 0.0;
     h_white.c_opp = 2.0;
     output<<i<<"\t"<<j<<"\t"<<play_nhp_game(h_black,h_white,false)<<endl;
+    cout<<i<<"\t"<<j<<endl;
   }
   output.close();
 }
@@ -51,7 +59,7 @@ int main(int argc, char* argv[]){
   heuristic h;
   mt19937_64 global_generator;
   global_generator.seed(unsigned(time(0)));
-  //test_nhp_agents(1650,137);
+  test_nhp_agents(1650,23);
 
   /*const char* direc = "C:/Users/svo/Documents/fmri/splits/";
   const char* board_filename = "C:/Users/svo/Documents/fmri/splits/boards_by_group.txt";

@@ -61,13 +61,13 @@
 	"heuristic.h"
 	<vector>
 
-1586479228 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+1587152821 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
 	"bfs.h"
 	<fstream>
 	<iomanip>
 	<random>
 
-1586480861 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
+1587155313 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
 	"board.h"
 	<vector>
 
@@ -91,7 +91,7 @@
 1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\dfs.cpp
 	"heuristic.h"
 
-1586543037 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
+1587155193 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
 	"board.h"
 	"bfs.h"
 	<random>
@@ -102,13 +102,13 @@
 	"board.h"
 	"heuristic.h"
 
-1586543061 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+1587157697 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
 	"heuristic.h"
 	"bfs.h"
 	<algorithm>
 	<fstream>
 
-1586542776 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
+1587157570 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"heuristic_nhp.h"
 	"data_struct.h"
@@ -144,18 +144,18 @@
 	<fstream>
 	<ctime>
 
-1586485503 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.cpp
+1587155379 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.cpp
 	"bfs_nhp.h"
 
 1586485479 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.h
 	"board.h"
 	"bfs.h"
 
-1586485282 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.cpp
+1587152311 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.cpp
 	"heuristic_nhp.h"
 	"bfs_nhp.h"
 
-1586540739 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.h
+1587152331 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.h
 	"board.h"
 	"heuristic.h"
 	"bfs_nhp.h"

@@ -33,7 +33,7 @@ class node{
       opt=0;
       iteration=-1;
     }
-    ~node(){
+    virtual ~node(){
       if(child){
         for(unsigned int i=0;i<Nchildren;i++)
           delete child[i];
@@ -44,14 +44,14 @@ class node{
     }
 
     node(board,double,bool,int);
-    void expand(vector<zet>,int);
+    virtual void expand(vector<zet>,int);
     void backpropagate(node*);
     bool determined();
     bool update_val(node*);
     bool update_opt(node*);
     bool update_pess(node*);
-    void get_opt();
-    void get_pess();
+    virtual void get_opt();
+    virtual void get_pess();
     void get_best_determined();
     void get_val();
     node* select();

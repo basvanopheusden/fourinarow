@@ -7,7 +7,6 @@
 using namespace std;
 
 class heuristic_nhp: public heuristic{
-    //bfs::nhp_node* game_tree;
     public:
         zet makemove_bfs(board,bool,bool=false);
         zet makemove_bfs(board,uint64,uint64,bool,bool=false);
