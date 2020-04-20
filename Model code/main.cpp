@@ -59,8 +59,7 @@ int main(int argc, char* argv[]){
   heuristic h;
   mt19937_64 global_generator;
   global_generator.seed(unsigned(time(0)));
-  test_nhp_agents(1650,23);
-
+  //test_nhp_agents(1650,23);
   /*const char* direc = "C:/Users/svo/Documents/fmri/splits/";
   const char* board_filename = "C:/Users/svo/Documents/fmri/splits/boards_by_group.txt";
   dat.load_data_from_directory(direc,39);
