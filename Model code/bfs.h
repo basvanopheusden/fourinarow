@@ -54,6 +54,12 @@ class node{
     virtual void get_pess();
     void get_best_determined();
     void get_val();
+    int get_size();
+    double get_mean_depth();
+    int get_sum_depth();
+    int get_num_leaves();
+    int get_num_internal_nodes();
+    int get_depth_of_pv();
     node* select();
     zet bestmove();
 };

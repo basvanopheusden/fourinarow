@@ -82,7 +82,7 @@ struct data_struct{
   vector<unsigned int> select_boards(int,int,int);
   void load_data_from_directory(const char*,int);
   void save_board_file(const char*);
-  void load_board_file(const char*,int);
+  void load_board_file(const char*,int=-1);
 };
 
 #endif // DATA_STRUCT_H_INCLUDED

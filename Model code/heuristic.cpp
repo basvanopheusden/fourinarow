@@ -48,14 +48,13 @@ bool pattern::isempty(uint64 m){
   return m & pieces_empty;
 }
 
-
 void heuristic::get_params_from_file(const char* filename,int n){
   ifstream input(filename,ios::in);
   string s;
   double params[3*Nweights+7];
   if(!input)
     cout<<"could not open input"<<endl;
-  for(int i=0;i<n-1;i++)
+  for(int i=0;i<n;i++)
     getline(input,s);
   for(unsigned int i=0;i<3*Nweights+7;i++)
     input>>params[i];
@@ -64,7 +63,7 @@ void heuristic::get_params_from_file(const char* filename,int n){
 }
 
 void heuristic::get_params_from_file(const char* filename,int subject,int group){
-    get_params_from_file(filename,5*subject+group);
+    get_params_from_file(filename,5*subject+group-1);
 }
 
 void heuristic::get_params_from_array(double* input){

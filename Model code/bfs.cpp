@@ -19,7 +19,6 @@ node::node(board bstart,double v,bool p,int d){
   Nchildren=0;
   iteration=-1;
   m=0;
-  cout<<"normal node, d:\t"<<d<<endl;
   if(b.black_has_won())
     pess=opt=BLACK_WINS-depth,val=10000.0;
   else if(b.white_has_won())
@@ -137,6 +136,8 @@ zet node::bestmove(){
     cout<<"oops"<<endl;
     b.write();
     cout<<Nchildren<<endl;
+    cin.get();
+
     return zet(0,val,player);
   }
   if(determined()){
@@ -148,4 +149,53 @@ zet node::bestmove(){
     if((player==BLACK && child[i]->val>v)||(player==WHITE && child[i]->val<v))
       v=child[i]->val,m_best=child[i]->m;
   return zet(m_best,v,player);
+}
+
+int node::get_size(){
+    int n=0;
+    if(best)
+      for(unsigned int i=0;i<Nchildren;i++)
+        n+=child[i]->get_size();
+    else
+      n+=1;
+    return n;
+}
+
+int node::get_num_internal_nodes(){
+    int n=1;
+    if(best)
+      for(unsigned int i=0;i<Nchildren;i++)
+        n+=child[i]->get_num_internal_nodes();
+    else
+      return 0;
+    return n;
+}
+
+
+int node::get_sum_depth(){
+    int n=0;
+    if(best)
+        for(unsigned int i=0;i<Nchildren;i++)
+            n+=child[i]->get_sum_depth();
+    else
+        n+=depth;
+    return n;
+}
+
+int node::get_num_leaves(){
+    int n=0;
+    if(best)
+        for(unsigned int i=0;i<Nchildren;i++)
+            n+=child[i]->get_num_leaves();
+    else
+        n+=1;
+    return n;
+}
+
+double node::get_mean_depth(){
+    return ((double) get_sum_depth())/get_num_leaves();
+}
+
+int node::get_depth_of_pv(){
+    return select()->depth-depth-1;
 }

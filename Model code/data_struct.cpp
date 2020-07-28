@@ -48,7 +48,7 @@ void data_struct::load_data_from_directory(const char* dir_name,int Nparticipant
   }
 }
 
-void data_struct::load_board_file(const char* filename,int player_id = -1){
+void data_struct::load_board_file(const char* filename,int player_id){
   ifstream input(filename,ios::in);
   uint64 bp,wp,m;
   string s;

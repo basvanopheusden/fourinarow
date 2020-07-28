@@ -61,13 +61,13 @@
 	"heuristic.h"
 	<vector>
 
-1587152821 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+1593629615 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
 	"bfs.h"
 	<fstream>
 	<iomanip>
 	<random>
 
-1587155313 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
+1588623689 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
 	"board.h"
 	<vector>
 
@@ -76,14 +76,14 @@
 	<cstdint>
 	<cstdlib>
 
-1586464774 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
+1588203358 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
 	"board.h"
 	"data_struct.h"
 	<algorithm>
 	<fstream>
 	<sstream>
 
-1586464748 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
+1594678330 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
 	"board.h"
 	<vector>
 	<random>
@@ -91,7 +91,7 @@
 1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\dfs.cpp
 	"heuristic.h"
 
-1587155193 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
+1594678238 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
 	"board.h"
 	"bfs.h"
 	<random>
@@ -102,19 +102,27 @@
 	"board.h"
 	"heuristic.h"
 
-1587157697 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+1591737790 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
 	"heuristic.h"
 	"bfs.h"
 	<algorithm>
 	<fstream>
 
-1587159946 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
+1595887286 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"heuristic_nhp.h"
 	"data_struct.h"
 	"bfs.h"
+	"utils.h"
+	"board_list.h"
+	"Peak code/heuristic.h"
+	"Experiment agent code/heuristic_old.h"
 	<fstream>
 	<ctime>
+	<ctime>
+	<chrono>
+	<thread>
+	<mutex>
 
 1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\mcts.cpp
 	"mcts.h"
@@ -138,7 +146,7 @@
 	<fstream>
 	<ctime>
 
-1586464655 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
+1595886536 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
 	"heuristic.h"
 	"data_struct.h"
 	<fstream>
@@ -159,4 +167,105 @@
 	"board.h"
 	"heuristic.h"
 	"bfs_nhp.h"
+
+1587401668 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\nhp_params.cpp
+
+1587418012 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\mean_depth.cpp
+	"heuristic.h"
+	"data_struct.h"
+	<fstream>
+
+1588202760 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_hvh.cpp
+	"board.h"
+	"data_struct.h"
+
+1590097340 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\params.cpp
+
+1590097449 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\js wrapper\makemove.cpp
+	"../board.h"
+	"../heuristic.h"
+	"../bfs.h"
+	<ctime>
+
+1591210514 c:\users\svo\documents\sourcetree repos\fourinarow\model code\utils.h
+	"board.h"
+	"data_struct.h"
+	"heuristic.h"
+
+1592253872 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board_list.h
+	<vector>
+	<queue>
+	<map>
+	<fstream>
+
+1594678269 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.cpp
+	"bfs.h"
+	"heuristic.h"
+
+1594677494 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.h
+	"board.h"
+	<vector>
+	<fstream>
+	<random>
+
+1594677494 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\board.h
+	<iostream>
+	<cstdlib>
+	<fstream>
+	<cstdint>
+
+1594678553 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.h
+	"board.h"
+	<random>
+	<vector>
+	<map>
+
+1594678186 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\features_all.cpp
+	"board.h"
+	"heuristic.h"
+
+1594678301 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.cpp
+	"heuristic.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<map>
+	<iomanip>
+
+1594678289 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\main.cpp
+	"board.h"
+	"heuristic.h"
+	"bfs.h"
+	<ctime>
+	<stdio.h>
+	<string.h>
+	<fstream>
+
+1480278361 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.cpp
+	"bfs_old.h"
+	"heuristic_old.h"
+
+1480278979 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.h
+	"../board.h"
+	<vector>
+	<fstream>
+	<iomanip>
+	<random>
+
+1480278969 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.h
+	"../board.h"
+	<random>
+	<vector>
+
+1480278702 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\features_old.cpp
+	"../board.h"
+	"heuristic_old.h"
+
+1480278226 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.cpp
+	"heuristic_old.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<map>
+	<iomanip>
 

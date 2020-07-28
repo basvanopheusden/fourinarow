@@ -9,7 +9,7 @@
 #ifndef _WIN64
 #define NTHREADS 20
 #else
-#define NTHREADS 8
+#define NTHREADS 50
 #endif
 
 struct task{
@@ -42,64 +42,31 @@ struct todolist{
   unsigned int N;
   unsigned int Nunsolved;
   unsigned int iterations;
-  const double cutoff=5;
+  const double cutoff=3.5;
   const double expt_factor=1.0;
   double Lexpt;
-  bool talk;
+  bool verbose;
   priority_queue<task> tasklist;
   map<int,task_data> data;
   ofstream output;
-  todolist(): N(0), Nunsolved(0), iterations(0), Lexpt(0.0), talk(false){}
-  todolist(const unsigned int N_val): N(N_val), Nunsolved(N), iterations(0), Lexpt(N*expt_factor), talk(false){
+  todolist(): N(0), Nunsolved(0), iterations(0), Lexpt(0.0), verbose(false){}
+  todolist(const int N_val): N(N_val), Nunsolved(N), iterations(0), Lexpt(N*expt_factor), verbose(false){
     for(unsigned int i=0;i<N;i++){
       make_task(i,1);
       add_task(i);
     }
   }
-  todolist(const vector<unsigned int>& alltasks): N(alltasks.size()), Nunsolved(N),
-           iterations(0), Lexpt(N*expt_factor), talk(false){
-    unsigned int i;
-    for(unsigned int j=0;j<N;j++){
-      i=alltasks[j];
-      make_task(i,1);
-      add_task(i);
-    }
-  }
-  todolist(const int N_val,char* filename): N(N_val), Nunsolved(0),
-           iterations(0), Lexpt(N*expt_factor), talk(false){
-    ifstream input(filename,ios::in);
-    unsigned int temp;
+  todolist(const int N_val,int* times): N(N_val), Nunsolved(0),
+           iterations(0), Lexpt(N*expt_factor), verbose(false){
     for(unsigned int i=0;i<N;i++){
-      input>>temp;
-      make_task(i,temp);
+      make_task(i,(unsigned int) times[i]);
       add_task(i);
-      Nunsolved+=temp;
+      Nunsolved+=times[i];
     }
-    input.close();
-  }
-  todolist(const vector<unsigned int>& alltasks, char* filename): N(alltasks.size()), Nunsolved(0),
-           iterations(0), Lexpt(N*expt_factor), talk(false){
-    ifstream input(filename,ios::in);
-    unsigned int temp;
-    unsigned int j=0,i=0;
-    while(j<alltasks.size()){
-      input>>temp;
-      if(alltasks[j]==i){
-        make_task(i,temp);
-        add_task(i);
-        j++;
-        Nunsolved+=temp;
-      }
-      i++;
-    }
-    input.close();
-  }
-  void set_cout(){
-    talk=true;
   }
   void set_output(char* filename){
     output.open(filename,ios::out | ios::app);
-    talk=true;
+    verbose=true;
   }
   ~todolist(){
     if(output.is_open())
@@ -127,7 +94,7 @@ struct todolist{
       Lexpt-=expt_factor/data[i].times;
       tries=data[i].tries;
       data[i].update_success();
-      if(talk){
+      if(verbose){
         if(output.is_open())
           output<<i<<"\t"<<iterations<<"\t"<<tries<<"\t"<<Lexpt/N<<"\t"<<Nunsolved<<endl;
         else cout<<i<<"\t"<<iterations<<"\t"<<tries<<"\t"<<Lexpt/N<<"\t"<<Nunsolved<<endl;
@@ -145,7 +112,7 @@ struct todolist{
     if(i!=-1 && !data[i].done)
       task_completed(i,success);
     if(stopping_time()){
-      cout<<"cutoff reached"<<endl;
+      //cout<<"cutoff reached"<<endl;
       return false;
     }
     if(!get_task(i))
