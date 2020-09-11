@@ -70,8 +70,8 @@ class heuristic{
     zet makerandommove(board,uint64,uint64,bool);
     zet makemove_dfs(board,bool);
     zet makemove_dfs(board,uint64,uint64,bool);
-    virtual zet makemove_bfs(board,bool,bool=false);
-    virtual zet makemove_bfs(board,uint64,uint64,bool,bool=false);
+    virtual zet makemove_bfs(board,bool,bool=false, bool=false);
+    virtual zet makemove_bfs(board,uint64,uint64,bool,bool=false, bool=false);
     zet makemove_mcts(board,bool);
     int playout(board,bool);
     void remove_features();

@@ -48,6 +48,7 @@ bool pattern::isempty(uint64 m){
   return m & pieces_empty;
 }
 
+
 void heuristic::get_params_from_file(const char* filename,int n){
   ifstream input(filename,ios::in);
   string s;
@@ -276,7 +277,7 @@ zet heuristic::makerandommove(board b, uint64 m1,uint64 m2,bool player){
   return zet(m2,0.0,player);
 }
 
-zet heuristic::makemove_bfs(board b,bool player,bool save_tree){
+zet heuristic::makemove_bfs(board b,bool player,bool save_tree, bool save_features_dropped){
   game_tree = new bfs::node(b,evaluate(b),player,1);
   bfs::node *n=game_tree;
   uint64 mold,m=0x0ULL;
@@ -300,16 +301,19 @@ zet heuristic::makemove_bfs(board b,bool player,bool save_tree){
     else t=0;
     iterations++;
   }
-  restore_features();
+
   bestmove = game_tree->bestmove();
   if(!save_tree){
     delete(game_tree);
     game_tree = NULL;
   }
+  if(!save_features_dropped){
+    restore_features();
+  }
   return bestmove;
 }
 
-zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player, bool save_tree){
+zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player, bool save_tree, bool save_features_dropped){
   game_tree = new bfs::node(b,evaluate(b),player,1);
   bfs::node *n=game_tree;
   zet bestmove;
@@ -336,11 +340,13 @@ zet heuristic::makemove_bfs(board b, uint64 m1, uint64 m2, bool player, bool sav
     else t=0;
     iterations++;
   }
-  restore_features();
   bestmove = game_tree->bestmove();
   if(!save_tree){
     delete(game_tree);
     game_tree = NULL;
+  }
+  if(!save_features_dropped){
+    restore_features();
   }
   return bestmove;
 }

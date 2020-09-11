@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset = "utf-8">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+	<meta name="viewport" content="width=device-width">
+	
+	<script src="../static/js/lib/jquery-2.2.4.min.js"></script>
+	<script src="../static/js/lib/jquery-ui.min.js"></script>
+	<script src="../static/js/lib/bootstrap-12/bootstrap.min.js"></script>
+	<script src="../static/js/lib/underscore-min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="../static/js/4inarow_base.js"></script>
+	<script src="../static/js/4inarow_standalone.js"></script>
+	<script src="../static/scripts/Code/makemove.js"></script>
+	
+	<link href = "../static/css/lib/bootstrap-12/bootstrap.min.css" rel = "stylesheet">
+	<link href = '../static/css/stylesheet.css' rel='stylesheet'>
+
+	</head>
+	<body>
+		<div class="overlayed"></div>
+		<div class="popup" id="instructions">
+			<h4 style="font-size:4vh;">Instructions</h4>
+			<img src="" style="width:70vw;border:none"></img>
+			<button id="previousbutton" type="button" class="mybutton" style="bottom:8%;left:43%;width:10%">Previous</button>
+			<button id="nextbutton" type="button" class="mybutton" style="bottom:8%;left:57%;width:10%">Next</button>
+		</div>
+
+		
+		<div class='container-fluid text-center'>
+			<div class="clickprompt">Please click where you want to play a piece.</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2 canvas-container">
+					<div class="canvas"></div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class="col-xs-8 col-xs-offset-2">
+					<div class="gamecount">Game</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class="headertext col-xs-8 col-xs-offset-2">
+					<h1>Your turn</h1>
+				</div>
+			</div>
+			<div class='row'>
+				<div class="col-xs-8 col-xs-offset-2">
+					<button type="button" class="mybutton" id="nextgamebutton" style="display:none">Next game</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -197,5 +197,7 @@ double node::get_mean_depth(){
 }
 
 int node::get_depth_of_pv(){
+    if(!best)
+        return 0;
     return select()->depth-depth-1;
 }

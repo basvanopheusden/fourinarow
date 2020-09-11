@@ -9,7 +9,7 @@
 #ifndef _WIN64
 #define NTHREADS 20
 #else
-#define NTHREADS 50
+#define NTHREADS 8
 #endif
 
 struct task{
