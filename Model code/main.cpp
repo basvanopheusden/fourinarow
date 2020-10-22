@@ -144,10 +144,10 @@ int main(int argc, char* argv[]){
   //const char* output_filename = "C:/Users/svo/Google Drive/Bas Games/Analysis/Model prediction/prediction_hvh.txt";
   //const char* input_filename = "C:/Users/svo/Documents/peak/splits/1/1.csv";
   //dat.load_board_file(input_filename);
-  const char* output_filename = "C:/Users/svo/Google Drive/Bas Games/Analysis/Ratings/tournament_results.txt";
-  const char* param_filename = "C:/Users/svo/Documents/Sourcetree repos/fourinarow/params.txt";
+  const char* output_filename = "C:/Users/svo/Google Drive/Bas Games/Analysis/Ratings/tournament_results_short.txt";
+  const char* param_filename = "C:/Users/svo/Documents/Sourcetree repos/fourinarow/params_sorted_by_elo.txt";
   const char* board_filename = "C:/Users/svo/Google Drive/Bas Games/Analysis/data_hvh.txt";
-  test_agents(param_filename,output_filename,1650,23);
+  test_agents(param_filename,output_filename,200,1);
   //ofstream output(output_filename);
   /*dat.load_board_file(board_filename);
   for(unsigned int i=0;i<dat.Nboards;i++){
