@@ -1,0 +1,7 @@
+open anaconda prompt
+cd C:\Users\svo\Documents\emsdk
+emsdk install latest
+emsdk activate latest
+emsdk_env.bat
+C:\Users\svo\Documents\Sourcetree repos\fourinarow\Model code\js wrapper
+em++ -v -std=c++11 ../bfs.cpp makemove.cpp ../features_all.cpp ../heuristic.cpp -o makemove.html -s EXPORTED_FUNCTIONS="['_makemove']" -s "EXTRA_EXPORTED_RUNTIME_METHODS=['cwrap']"

@@ -200,8 +200,8 @@ vector<zet> heuristic::get_moves(board& b, bool player, bool nosort=false){
   uint64 m,m1,m2;
   map<uint64,int> lookup;
   double deltaL=0.0;
-  double c_pass=(player==self)?c_self:c_opp;
-  double c_act=(player==self)?c_opp:c_self;
+  double c_act=(player==self)?c_self:c_opp;
+  double c_pass=(player==self)?c_opp:c_self;
   for(i=0;i<Nfeatures;i++)
     if(feature[i].is_active(b)){
       if(feature[i].contained(b,player))
