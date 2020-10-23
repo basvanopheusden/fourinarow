@@ -61,7 +61,7 @@
 	"heuristic.h"
 	<vector>
 
-1593629615 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+1599848358 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
 	"bfs.h"
 	<fstream>
 	<iomanip>
@@ -71,19 +71,19 @@
 	"board.h"
 	<vector>
 
-1582675532 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board.h
+1599848358 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board.h
 	<iostream>
 	<cstdint>
 	<cstdlib>
 
-1588203358 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
+1599848359 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
 	"board.h"
 	"data_struct.h"
 	<algorithm>
 	<fstream>
 	<sstream>
 
-1594678330 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
+1599848359 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
 	"board.h"
 	<vector>
 	<random>
@@ -91,7 +91,7 @@
 1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\dfs.cpp
 	"heuristic.h"
 
-1594678238 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
+1599848360 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
 	"board.h"
 	"bfs.h"
 	<random>
@@ -102,13 +102,13 @@
 	"board.h"
 	"heuristic.h"
 
-1591737790 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+1603316760 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
 	"heuristic.h"
 	"bfs.h"
 	<algorithm>
 	<fstream>
 
-1595887286 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
+1603399755 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"heuristic_nhp.h"
 	"data_struct.h"
@@ -146,7 +146,7 @@
 	<fstream>
 	<ctime>
 
-1595886536 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
+1599848360 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
 	"heuristic.h"
 	"data_struct.h"
 	<fstream>
@@ -187,12 +187,12 @@
 	"../bfs.h"
 	<ctime>
 
-1591210514 c:\users\svo\documents\sourcetree repos\fourinarow\model code\utils.h
+1599848360 c:\users\svo\documents\sourcetree repos\fourinarow\model code\utils.h
 	"board.h"
 	"data_struct.h"
 	"heuristic.h"
 
-1592253872 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board_list.h
+1599848358 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board_list.h
 	<vector>
 	<queue>
 	<map>
