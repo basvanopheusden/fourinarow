@@ -54,7 +54,7 @@ class heuristic{
     heuristic();
     void get_params_from_file(const char*,int,int);
     void get_params_from_file(const char*,int);
-    void get_params_from_array(double*);
+    virtual void get_params_from_array(double*);
     void get_features_from_file(const char*);
     void addfeature(uint64, int );
     void addfeature(uint64, uint64, int , int );
@@ -63,7 +63,7 @@ class heuristic{
     void update_weights();
     double evaluate(board, zet);
     double evaluate(board);
-    vector<zet> get_pruned_moves(board&, bool);
+    virtual vector<zet> get_pruned_moves(board&, bool);
     vector<zet> get_moves(board&, bool, bool);
     vector<zet> get_moves(board&, uint64, uint64, bool);
     zet makerandommove(board,bool);

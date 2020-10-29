@@ -32,6 +32,6 @@ int main(int argc, const char* argv[]){
   int N = atoi(argv[6]);
   dat.load_board_file(input_filename,player);
   cout<<dat.Nboards<<endl;
-  compute_pv_depth(h,dat,param_filename,output_filename,player,group,N);
+  compute_planning_depth(h,dat,param_filename,output_filename,player,group,N);
   return 0;
 }
