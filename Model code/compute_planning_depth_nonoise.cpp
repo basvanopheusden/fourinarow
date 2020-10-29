@@ -8,7 +8,6 @@
 void compute_planning_depth(heuristic& h, data_struct& dat, const char* param_filename, const char* output_filename, int player, int group, int N){
   ofstream output(output_filename,ios::out);
   h.get_params_from_file(param_filename,player,group);
-  h.noise=normal_distribution<double> (0.0,0.0);
   double s;
   for(unsigned int i=0;i<dat.Nboards;i++){
     s=0.0;
