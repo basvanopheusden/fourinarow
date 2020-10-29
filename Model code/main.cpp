@@ -7,6 +7,7 @@
 #include "Peak code/heuristic.h"
 #include "Experiment agent code/heuristic_old.h"
 #include "heuristic_fixed_branch.h"
+#include "heuristic_fixed_iters.h"
 
 #include <fstream>
 #include <ctime>
@@ -131,7 +132,7 @@ void test_agents(const char* param_filename, const char* output_filename, int N,
 
 int main(int argc, char* argv[]){
   data_struct dat;
-  heuristic_fixed_branch h;
+  heuristic_fixed_iters h;
   mt19937_64 global_generator;
   global_generator.seed(unsigned(time(0)));
   //const char* output_filename = "C:/Users/svo/Google Drive/Bas Games/Analysis/Peak/peak_vs_experiment_agents.txt";

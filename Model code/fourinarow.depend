@@ -108,7 +108,7 @@
 	<algorithm>
 	<fstream>
 
-1603999082 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
+1604006549 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"heuristic_nhp.h"
 	"data_struct.h"
@@ -118,6 +118,7 @@
 	"Peak code/heuristic.h"
 	"Experiment agent code/heuristic_old.h"
 	"heuristic_fixed_branch.h"
+	"heuristic_fixed_iters.h"
 	<fstream>
 	<ctime>
 	<ctime>
@@ -270,10 +271,17 @@
 	<map>
 	<iomanip>
 
-1603998969 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.cpp
+1603999097 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.cpp
 	"heuristic_fixed_branch.h"
 
 1603997866 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.h
+	"board.h"
+	"heuristic.h"
+
+1604006489 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_iters.cpp
+	"heuristic_fixed_iters.h"
+
+1604006630 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_iters.h
 	"board.h"
 	"heuristic.h"
 
