@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --array=0-749
+#SBATCH --array=0-199
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 #SBATCH --mem=1GB
@@ -9,9 +9,9 @@
 #SBATCH --mail-user=svo213@nyu.edu
 #SBATCH --output=4inarow_%j.out
 
-Nplayers=150
-dataset=learn
-model=final_drop_tile
+Nplayers=40
+dataset=hvh
+model=final_optweights
 player=$((${SLURM_ARRAY_TASK_ID}%$Nplayers))
 group=$((${SLURM_ARRAY_TASK_ID}/$Nplayers+1))
 #group=0
