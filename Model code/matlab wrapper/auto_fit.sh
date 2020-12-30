@@ -1,26 +1,26 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --array=0-14
-#SBATCH --cpus-per-task=20
-#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --array=1005,1025,1155,1510,1782
+#SBATCH --time=12:00:00
 #SBATCH --mem=2GB
 #SBATCH --job-name=fourinarow
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=svo213@nyu.edu
 #SBATCH --output=4inarow_%j.out
 
-Nplayers=3
-player=$((${SLURM_ARRAY_TASK_ID}%$Nplayers+1))
-group=$((${SLURM_ARRAY_TASK_ID}/$Nplayers+1))
+player=$((${SLURM_ARRAY_TASK_ID}/5+4001))
+group=$((${SLURM_ARRAY_TASK_ID}%5+1))
 #group=0
-direc=$HOME/fourinarow/Data/ili/splits
+direc=$SCRATCH/fourinarowData/peak/splits
 codedirec=$SCRATCH/fourinarow/Model\ code/matlab\ wrapper
 
 module purge
-module load matlab/2018a
+module load matlab/2020b
 
 echo $player $group
 
 echo "addpath(genpath('${codedirec}')); cross_val($player,$group,'${direc}'); exit;" | matlab -nodisplay
 
 echo "Done"
+
