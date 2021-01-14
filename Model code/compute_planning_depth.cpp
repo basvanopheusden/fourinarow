@@ -8,18 +8,16 @@
 void compute_planning_depth(heuristic& h, data_struct& dat, const char* param_filename, const char* output_filename, int player, int group, int N){
   ofstream output(output_filename,ios::out);
   h.get_params_from_file(param_filename,player,group);
-  h.noise=normal_distribution<double> (0.0,0.0);
-  double s;
+  double s=0.0;
   for(unsigned int i=0;i<dat.Nboards;i++){
-    s=0.0;
     for(int n=0;n<N;n++){
       h.makemove_bfs(dat.alltrials[i].b,dat.alltrials[i].player,true,false);
       s+=h.game_tree->get_depth_of_pv();
       delete(h.game_tree);
     }
-    output<<s/N<<endl;    
-    cout<<i<<"\t"<<s/N<<endl;
   }
+  output<<s/(N*dat.Nboards)<<endl;    
+  cout<<s/(N*dat.Nboards)<<endl;
   output.close();
 }
 
