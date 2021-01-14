@@ -61,54 +61,54 @@
 	"heuristic.h"
 	<vector>
 
-1599848358 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
+1599844758 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.cpp
 	"bfs.h"
 	<fstream>
 	<iomanip>
 	<random>
 
-1588623689 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
+1588620089 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs.h
 	"board.h"
 	<vector>
 
-1599848358 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board.h
+1599844758 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board.h
 	<iostream>
 	<cstdint>
 	<cstdlib>
 
-1599848359 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
+1599844759 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.cpp
 	"board.h"
 	"data_struct.h"
 	<algorithm>
 	<fstream>
 	<sstream>
 
-1599848359 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
+1599844759 c:\users\svo\documents\sourcetree repos\fourinarow\model code\data_struct.h
 	"board.h"
 	<vector>
 	<random>
 
-1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\dfs.cpp
+1582671932 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\dfs.cpp
 	"heuristic.h"
 
-1603998992 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
+1603995392 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.h
 	"board.h"
 	"bfs.h"
 	<random>
 	<vector>
 	<map>
 
-1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\features_all.cpp
+1582671932 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\features_all.cpp
 	"board.h"
 	"heuristic.h"
 
-1603316760 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
+1603313160 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic.cpp
 	"heuristic.h"
 	"bfs.h"
 	<algorithm>
 	<fstream>
 
-1604006549 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
+1610127841 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\main.cpp
 	"heuristic.h"
 	"heuristic_nhp.h"
 	"data_struct.h"
@@ -126,46 +126,49 @@
 	<thread>
 	<mutex>
 
-1582675532 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\mcts.cpp
+1582671932 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\mcts.cpp
 	"mcts.h"
 	"heuristic.h"
 
-1582675532 c:\users\svo\documents\sourcetree repos\fourinarow\model code\mcts.h
+1582671932 c:\users\svo\documents\sourcetree repos\fourinarow\model code\mcts.h
 	"board.h"
 	"heuristic.h"
 	<vector>
 
-1583864546 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\python wrapper\python_wrapper.cpp
+1583860946 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\python wrapper\python_wrapper.cpp
 	"../board.h"
 	"../heuristic.h"
 	"../data_struct.h"
 	<fstream>
 
-1586464470 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\eye_trace.cpp
+1586460870 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\eye_trace.cpp
 	"heuristic.h"
 	"data_struct.h"
 	"bfs.h"
 	<fstream>
 	<ctime>
 
-1599848360 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
+1599844760 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\fmri_values.cpp
 	"heuristic.h"
 	"data_struct.h"
 	<fstream>
 	<ctime>
 
-1587155379 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.cpp
+1587151779 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.cpp
 	"bfs_nhp.h"
 
-1586485479 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.h
+1586481879 c:\users\svo\documents\sourcetree repos\fourinarow\model code\bfs_nhp.h
 	"board.h"
 	"bfs.h"
 
-1587152311 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.cpp
+1610127833 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.cpp
 	"heuristic_nhp.h"
 	"bfs_nhp.h"
+	<iostream>
+	<fstream>
+	<ctime>
 
-1587152331 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.h
+1587148731 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_nhp.h
 	"board.h"
 	"heuristic.h"
 	"bfs_nhp.h"
@@ -189,44 +192,44 @@
 	"../bfs.h"
 	<ctime>
 
-1599848360 c:\users\svo\documents\sourcetree repos\fourinarow\model code\utils.h
+1610036164 c:\users\svo\documents\sourcetree repos\fourinarow\model code\utils.h
 	"board.h"
 	"data_struct.h"
 	"heuristic.h"
 
-1599848358 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board_list.h
+1599844758 c:\users\svo\documents\sourcetree repos\fourinarow\model code\board_list.h
 	<vector>
 	<queue>
 	<map>
 	<fstream>
 
-1594678269 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.cpp
+1594674669 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.cpp
 	"bfs.h"
 	"heuristic.h"
 
-1594677494 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.h
+1594673894 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\bfs.h
 	"board.h"
 	<vector>
 	<fstream>
 	<random>
 
-1594677494 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\board.h
+1594673894 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\board.h
 	<iostream>
 	<cstdlib>
 	<fstream>
 	<cstdint>
 
-1594678553 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.h
+1594674953 c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.h
 	"board.h"
 	<random>
 	<vector>
 	<map>
 
-1594678186 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\features_all.cpp
+1594674586 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\features_all.cpp
 	"board.h"
 	"heuristic.h"
 
-1594678301 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.cpp
+1594674701 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\peak code\heuristic.cpp
 	"heuristic.h"
 	<iostream>
 	<fstream>
@@ -243,27 +246,27 @@
 	<string.h>
 	<fstream>
 
-1480278361 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.cpp
+1480274761 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.cpp
 	"bfs_old.h"
 	"heuristic_old.h"
 
-1480278979 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.h
+1480275379 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\bfs_old.h
 	"../board.h"
 	<vector>
 	<fstream>
 	<iomanip>
 	<random>
 
-1480278969 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.h
+1480275369 c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.h
 	"../board.h"
 	<random>
 	<vector>
 
-1480278702 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\features_old.cpp
+1480275102 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\features_old.cpp
 	"../board.h"
 	"heuristic_old.h"
 
-1480278226 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.cpp
+1480274626 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\experiment agent code\heuristic_old.cpp
 	"heuristic_old.h"
 	<iostream>
 	<fstream>
@@ -274,14 +277,14 @@
 1603999097 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.cpp
 	"heuristic_fixed_branch.h"
 
-1603997866 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.h
+1603994266 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_branch.h
 	"board.h"
 	"heuristic.h"
 
 1604006489 source:c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_iters.cpp
 	"heuristic_fixed_iters.h"
 
-1604006630 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_iters.h
+1604003030 c:\users\svo\documents\sourcetree repos\fourinarow\model code\heuristic_fixed_iters.h
 	"board.h"
 	"heuristic.h"
 

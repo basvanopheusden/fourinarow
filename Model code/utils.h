@@ -6,6 +6,7 @@
 #include "heuristic.h"
 
 double compute_entropy(heuristic& ,board ,bool ,int );
+void test_nhp_agents(int ,int );
 void compute_fmri_values_entropy(heuristic& , data_struct& , const char* , const char* , int );
 void compute_fmri_iters(heuristic& , data_struct& , const char* , const char* , int );
 void compute_fmri_values_pv_depth(heuristic& , data_struct& , const char* , const char* , int );

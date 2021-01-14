@@ -1,5 +1,8 @@
 #include "heuristic_nhp.h"
 #include "bfs_nhp.h"
+#include <iostream>
+#include <fstream>
+#include <ctime>
 
 bool play_nhp_game(heuristic_nhp& h_black, heuristic_nhp& h_white, bool verbose = false){
   board b;
@@ -27,18 +30,16 @@ void test_nhp_agents(int N,int k){
   global_generator.seed(unsigned(time(0)));
   h_black.seed_generator(global_generator);
   h_white.seed_generator(global_generator);
-  const char* param_filename = "../params.txt";
+  const char* param_filename = "../params_nhp.txt";
   int i,j;
   for(int n=0;n<N*N;n+=k){
     i=n/N;
     j=n%N;
     h_black.get_params_from_file(param_filename,i);
-    h_black.lapse_rate = (i%20==0?1:(i%20==1?0.5+0.5*h_black.lapse_rate:h_black.lapse_rate));
     h_black.update();
     h_black.c_self = 2.0;
     h_black.c_opp = 0.0;
     h_white.get_params_from_file(param_filename,j);
-    h_white.lapse_rate = (j%20==0?1:(j%20==1?0.5+0.5*h_white.lapse_rate:h_white.lapse_rate));
     h_white.update();
     h_white.c_self = 0.0;
     h_white.c_opp = 2.0;
@@ -58,7 +59,7 @@ zet heuristic_nhp::makemove_bfs(board b,bool player,bool save_tree){
   int max_iterations=iter_dist(engine)+1;
   int iterations=0;
   if(lapse(engine))
-    returk_chose_utilityn makerandommove(b,player);
+    return makerandommove(b,player);
   remove_features();
   self=player;
   while(iterations<max_iterations && t<tmax && !game_tree->determined()){

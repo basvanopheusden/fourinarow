@@ -100,6 +100,8 @@
 		<Unit filename="Python wrapper/python_wrapper.cpp" />
 		<Unit filename="bfs.cpp" />
 		<Unit filename="bfs.h" />
+		<Unit filename="bfs_nhp.cpp" />
+		<Unit filename="bfs_nhp.h" />
 		<Unit filename="board.h" />
 		<Unit filename="data_struct.cpp">
 			<Option target="Debug" />
@@ -124,6 +126,8 @@
 		</Unit>
 		<Unit filename="heuristic.cpp" />
 		<Unit filename="heuristic.h" />
+		<Unit filename="heuristic_nhp.cpp" />
+		<Unit filename="heuristic_nhp.h" />
 		<Unit filename="main.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
@@ -136,6 +140,7 @@
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>
+		<Unit filename="utils.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
