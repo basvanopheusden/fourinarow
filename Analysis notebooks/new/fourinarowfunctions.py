@@ -4,6 +4,7 @@ import os
 import pandas as pd
 
 def expand_params(params):
+    """convert list of 10 parameters to expanded version of 58, as used for the C++ input"""
     return np.hstack([[10000],params[:2],params[3:4],[1,1],params[5:6],
                     np.tile(params[6:],4),[0],params[4]*np.tile(params[6:],4),
                     [0],np.tile(params[2:3],17)])
