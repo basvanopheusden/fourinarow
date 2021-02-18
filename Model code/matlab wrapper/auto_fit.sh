@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=16
-#SBATCH --array=1005,1025,1155,1510,1782
+#SBATCH --array=0-499
 #SBATCH --time=12:00:00
 #SBATCH --mem=2GB
 #SBATCH --job-name=fourinarow
@@ -9,7 +9,7 @@
 #SBATCH --mail-user=svo213@nyu.edu
 #SBATCH --output=4inarow_%j.out
 
-player=$((${SLURM_ARRAY_TASK_ID}/5+4001))
+player=$((${SLURM_ARRAY_TASK_ID}/5+1))
 group=$((${SLURM_ARRAY_TASK_ID}%5+1))
 #group=0
 direc=$SCRATCH/fourinarowData/peak/splits
