@@ -9,7 +9,7 @@
 #ifndef _WIN64
 #define NTHREADS 20
 #else
-#define NTHREADS 8
+#define NTHREADS 20
 #endif
 
 struct task{
@@ -64,7 +64,7 @@ struct todolist{
       Nunsolved+=times[i];
     }
   }
-  void set_output(char* filename){
+  void set_output(const char* filename){
     output.open(filename,ios::out | ios::app);
     verbose=true;
   }
@@ -82,8 +82,11 @@ struct todolist{
     while(!tasklist.empty()){
       i=tasklist.top().i;
       tasklist.pop();
-      if(!data[i].done)
+      if(!data[i].done){
+        while(tasklist.size()<NTHREADS)
+          add_task(i);
         return true;
+      }
     }
     return false;
   }
@@ -117,8 +120,8 @@ struct todolist{
     }
     if(!get_task(i))
       return false;
-    if(Nunsolved<=NTHREADS)
-      add_task(i);
+    //if(Nunsolved<=NTHREADS)
+      //add_task(i);
     return true;
   }
   bool stopping_time(){

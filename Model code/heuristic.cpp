@@ -84,6 +84,43 @@ void heuristic::get_params_from_array(double* input){
   update();
 }
 
+void heuristic::get_params_from_sliders(double feature_drop_slider, double lapse_slider, double value_noise_slider, double search_slider, double offense_slider){
+  double a = 2.0*value_noise_slider;
+  double b = 2.0-a;
+  double w_center = 0.6;
+  double w_2conn = 0.9;
+  double w_2unc = 0.45;
+  double w_3 = 3.5;
+  double w_4 = 6.0;
+  stopping_thresh=10000.0;
+  pruning_thresh=a*4.0;
+  gamma=pow(0.001,search_slider);
+  lapse_rate=1.0-lapse_slider;
+  opp_scale=0.25*pow(16,offense_slider);
+  exploration_constant=1.0;
+  center_weight=a*w_center;
+  for(unsigned int i=0;i<Nweights;i+=4){
+    w_act[i]=a*w_2conn;
+    w_pass[i]=a*w_2conn;
+    w_act[i+1]=a*w_2unc;
+    w_pass[i+1]=a*w_2unc;
+    w_act[i+2]=a*w_3;
+    w_pass[i+2]=a*w_3;
+    w_act[i+3]=a*w_4;
+    w_pass[i+3]=a*w_4;
+  }
+  w_act[Nweights-1]=0.0;
+  w_pass[Nweights-1]=0.0;
+  for(unsigned int i=0;i<Nweights;i++)
+    delta[i]=1.0-feature_drop_slider;
+  update();
+  noise=normal_distribution<double>(0.0,b);
+}
+//array([4.936233  , 0.0217952 , 0.22094454, 0.02134452, 0.92497526,
+//       0.60912862, 0.90444204, 0.45075576, 3.4271775 , 6.172805  ])
+
+
+
 void heuristic::get_features_from_file(const char* filename){
   uint64 c,e;
   int i,n;
@@ -283,7 +320,8 @@ zet heuristic::makemove_bfs(board b,bool player,bool save_tree, bool save_featur
   uint64 mold,m=0x0ULL;
   int t=0,tmax=stopping_thresh;
   vector<zet> candidates;
-  int max_iterations=iter_dist(engine)+1;
+  //int max_iterations=iter_dist(engine)+1;
+  int max_iterations=int(1.0/gamma)+1;
   int iterations=0;
   if(lapse(engine))
     return makerandommove(b,player);

@@ -54,6 +54,7 @@ class heuristic{
     heuristic();
     void get_params_from_file(const char*,int,int);
     void get_params_from_file(const char*,int);
+    void get_params_from_sliders(double feature_drop_slider, double lapse_slider, double value_noise_slider, double search_slider, double offense_slider);
     virtual void get_params_from_array(double*);
     void get_features_from_file(const char*);
     void addfeature(uint64, int );

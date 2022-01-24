@@ -1,77 +1,95 @@
 EXPORTS
-    _Z7compare3zetS_ @1
-    _ZN3bfs4node10determinedEv @2
-    _ZN3bfs4node10update_optEPS0_ @3
-    _ZN3bfs4node10update_valEPS0_ @4
-    _ZN3bfs4node11update_pessEPS0_ @5
-    _ZN3bfs4node13backpropagateEPS0_ @6
-    _ZN3bfs4node13get_sum_depthEv @7
-    _ZN3bfs4node14get_mean_depthEv @8
-    _ZN3bfs4node14get_num_leavesEv @9
-    _ZN3bfs4node15get_depth_of_pvEv @10
-    _ZN3bfs4node19get_best_determinedEv @11
-    _ZN3bfs4node22get_num_internal_nodesEv @12
-    _ZN3bfs4node6expandESt6vectorI3zetSaIS2_EEi @13
-    _ZN3bfs4node6selectEv @14
-    _ZN3bfs4node7get_optEv @15
-    _ZN3bfs4node7get_valEv @16
-    _ZN3bfs4node8bestmoveEv @17
-    _ZN3bfs4node8get_pessEv @18
-    _ZN3bfs4node8get_sizeEv @19
-    _ZN3bfs4nodeC1E5boarddbi @20
-    _ZN3bfs4nodeC2E5boarddbi @21
-    _ZN3bfs4nodeD0Ev @22
-    _ZN3bfs4nodeD1Ev @23
-    _ZN7pattern11just_activeER5board @24
-    _ZN7pattern13diff_act_passEv @25
-    _ZN7pattern14missing_piecesER5boardb @26
-    _ZN7pattern6updateEPdS0_S0_ @27
-    _ZN7pattern7isemptyEy @28
-    _ZN7pattern9containedER5board @29
-    _ZN7pattern9containedER5boardb @30
-    _ZN7pattern9is_activeER5board @31
-    _ZN7patternC1EyyiPdS0_S0_i @32
-    _ZN7patternC2EyyiPdS0_S0_i @33
-    _ZN9heuristic10addfeatureEyi @34
-    _ZN9heuristic10addfeatureEyyii @35
-    _ZN9heuristic12makemove_bfsE5boardbb @36
-    _ZN9heuristic12makemove_bfsE5boardyybb @37
-    _ZN9heuristic14makerandommoveE5boardb @38
-    _ZN9heuristic14makerandommoveE5boardyyb @39
-    _ZN9heuristic14seed_generatorESt23mersenne_twister_engineIyLy64ELy312ELy156ELy31ELy13043109905998158313ELy29ELy6148914691236517205ELy17ELy8202884508482404352ELy37ELy18444473444759240704ELy43ELy6364136223846793005EE @40
-    _ZN9heuristic14update_weightsEv @41
-    _ZN9heuristic15eliminate_noiseEv @42
-    _ZN9heuristic15remove_featuresEv @43
-    _ZN9heuristic16get_pruned_movesER5boardb @44
-    _ZN9heuristic16restore_featuresEv @45
-    _ZN9heuristic20get_params_from_fileEPKci @46
-    _ZN9heuristic20get_params_from_fileEPKcii @47
-    _ZN9heuristic21get_params_from_arrayEPd @48
-    _ZN9heuristic22get_features_from_fileEPKc @49
-    _ZN9heuristic6updateEv @50
-    _ZN9heuristic8evaluateE5board @51
-    _ZN9heuristic8evaluateE5board3zet @52
-    _ZN9heuristic9get_movesER5boardbb @53
-    _ZN9heuristic9get_movesER5boardyyb @54
-    _ZN9heuristicC1Ev @55
-    _ZN9heuristicC2Ev @56
-    _ZNKSt5ctypeIcE8do_widenEc @57
-    _ZNSt23mersenne_twister_engineIyLy64ELy312ELy156ELy31ELy13043109905998158313ELy29ELy6148914691236517205ELy17ELy8202884508482404352ELy37ELy18444473444759240704ELy43ELy6364136223846793005EEclEv @58
-    _ZNSt6vectorI3zetSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @59
-    _ZNSt6vectorI7patternSaIS0_EE17_M_realloc_insertIJRKS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @60
-    _ZNSt6vectorI7patternSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @61
-    _ZNSt6vectorIPN3bfs4nodeESaIS2_EE17_M_realloc_insertIJRKS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_ @62
-    _ZNSt6vectorIySaIyEE17_M_realloc_insertIJRKyEEEvN9__gnu_cxx17__normal_iteratorIPyS1_EEDpOT_ @63
-    _ZNSt8_Rb_treeIySt4pairIKydESt10_Select1stIS2_ESt4lessIyESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E @64
-    _ZNSt8_Rb_treeIySt4pairIKyiESt10_Select1stIS2_ESt4lessIyESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E @65
-    _ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEExS2_NS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_T0_SE_T1_T2_ @66
-    _ZSt13__heap_selectIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEENS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_SD_T0_ @67
-    _ZSt16__introsort_loopIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEExNS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_T0_T1_ @68
-    _ZSt22__move_median_to_firstIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEENS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_SD_SD_T0_ @69
-    _ZTI9heuristic @70 DATA
-    _ZTIN3bfs4nodeE @71 DATA
-    _ZTS9heuristic @72 DATA
-    _ZTSN3bfs4nodeE @73 DATA
-    _ZTV9heuristic @74 DATA
-    _ZTVN3bfs4nodeE @75 DATA
-    makemove @76
+    _Z13play_nhp_gameR13heuristic_nhpS0_b @1
+    _Z15test_nhp_agentsii @2
+    _Z7compare3zetS_ @3
+    _ZN13heuristic_nhp12makemove_bfsE5boardbb @4
+    _ZN13heuristic_nhp12makemove_bfsE5boardyybb @5
+    _ZN3bfs4node10determinedEv @6
+    _ZN3bfs4node10update_optEPS0_ @7
+    _ZN3bfs4node10update_valEPS0_ @8
+    _ZN3bfs4node11update_pessEPS0_ @9
+    _ZN3bfs4node13backpropagateEPS0_ @10
+    _ZN3bfs4node13get_sum_depthEv @11
+    _ZN3bfs4node14get_mean_depthEv @12
+    _ZN3bfs4node14get_num_leavesEv @13
+    _ZN3bfs4node15get_depth_of_pvEv @14
+    _ZN3bfs4node19get_best_determinedEv @15
+    _ZN3bfs4node22get_num_internal_nodesEv @16
+    _ZN3bfs4node6expandESt6vectorI3zetSaIS2_EEi @17
+    _ZN3bfs4node6selectEv @18
+    _ZN3bfs4node7get_optEv @19
+    _ZN3bfs4node7get_valEv @20
+    _ZN3bfs4node8bestmoveEv @21
+    _ZN3bfs4node8get_pessEv @22
+    _ZN3bfs4node8get_sizeEv @23
+    _ZN3bfs4nodeC1E5boarddbi @24
+    _ZN3bfs4nodeC2E5boarddbi @25
+    _ZN3bfs4nodeD0Ev @26
+    _ZN3bfs4nodeD1Ev @27
+    _ZN3bfs8nhp_node6expandESt6vectorI3zetSaIS2_EEi @28
+    _ZN3bfs8nhp_node7get_optEv @29
+    _ZN3bfs8nhp_node8get_pessEv @30
+    _ZN3bfs8nhp_nodeC1E5boarddbi @31
+    _ZN3bfs8nhp_nodeC2E5boarddbi @32
+    _ZN3bfs8nhp_nodeD0Ev @33
+    _ZN3bfs8nhp_nodeD1Ev @34
+    _ZN7pattern11just_activeER5board @35
+    _ZN7pattern13diff_act_passEv @36
+    _ZN7pattern14missing_piecesER5boardb @37
+    _ZN7pattern6updateEPdS0_S0_ @38
+    _ZN7pattern7isemptyEy @39
+    _ZN7pattern9containedER5board @40
+    _ZN7pattern9containedER5boardb @41
+    _ZN7pattern9is_activeER5board @42
+    _ZN7patternC1EyyiPdS0_S0_i @43
+    _ZN7patternC2EyyiPdS0_S0_i @44
+    _ZN9heuristic10addfeatureEyi @45
+    _ZN9heuristic10addfeatureEyyii @46
+    _ZN9heuristic12makemove_bfsE5boardbbb @47
+    _ZN9heuristic12makemove_bfsE5boardyybbb @48
+    _ZN9heuristic14makerandommoveE5boardb @49
+    _ZN9heuristic14makerandommoveE5boardyyb @50
+    _ZN9heuristic14seed_generatorESt23mersenne_twister_engineIyLy64ELy312ELy156ELy31ELy13043109905998158313ELy29ELy6148914691236517205ELy17ELy8202884508482404352ELy37ELy18444473444759240704ELy43ELy6364136223846793005EE @51
+    _ZN9heuristic14update_weightsEv @52
+    _ZN9heuristic15eliminate_noiseEv @53
+    _ZN9heuristic15remove_featuresEv @54
+    _ZN9heuristic16get_pruned_movesER5boardb @55
+    _ZN9heuristic16restore_featuresEv @56
+    _ZN9heuristic20get_params_from_fileEPKci @57
+    _ZN9heuristic20get_params_from_fileEPKcii @58
+    _ZN9heuristic21get_params_from_arrayEPd @59
+    _ZN9heuristic22get_features_from_fileEPKc @60
+    _ZN9heuristic6updateEv @61
+    _ZN9heuristic8evaluateE5board @62
+    _ZN9heuristic8evaluateE5board3zet @63
+    _ZN9heuristic9get_movesER5boardbb @64
+    _ZN9heuristic9get_movesER5boardyyb @65
+    _ZN9heuristicC1Ev @66
+    _ZN9heuristicC2Ev @67
+    _ZN9heuristicD2Ev @68
+    _ZNKSt5ctypeIcE8do_widenEc @69
+    _ZNSt23mersenne_twister_engineIyLy64ELy312ELy156ELy31ELy13043109905998158313ELy29ELy6148914691236517205ELy17ELy8202884508482404352ELy37ELy18444473444759240704ELy43ELy6364136223846793005EEclEv @70
+    _ZNSt6vectorI3zetSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @71
+    _ZNSt6vectorI7patternSaIS0_EE17_M_realloc_insertIJRKS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @72
+    _ZNSt6vectorI7patternSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_ @73
+    _ZNSt6vectorIPN3bfs4nodeESaIS2_EE17_M_realloc_insertIJRKS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_ @74
+    _ZNSt6vectorIySaIyEE17_M_realloc_insertIJRKyEEEvN9__gnu_cxx17__normal_iteratorIPyS1_EEDpOT_ @75
+    _ZNSt8_Rb_treeIySt4pairIKydESt10_Select1stIS2_ESt4lessIyESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E @76
+    _ZNSt8_Rb_treeIySt4pairIKyiESt10_Select1stIS2_ESt4lessIyESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E @77
+    _ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEExS2_NS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_T0_SE_T1_T2_ @78
+    _ZSt13__heap_selectIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEENS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_SD_T0_ @79
+    _ZSt16__introsort_loopIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEExNS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_T0_T1_ @80
+    _ZSt22__move_median_to_firstIN9__gnu_cxx17__normal_iteratorIP3zetSt6vectorIS2_SaIS2_EEEENS0_5__ops15_Iter_comp_iterIPFbS2_S2_EEEEvT_SD_SD_SD_T0_ @81
+    _ZTI13heuristic_nhp @82 DATA
+    _ZTI9heuristic @83 DATA
+    _ZTIN3bfs4nodeE @84 DATA
+    _ZTIN3bfs8nhp_nodeE @85 DATA
+    _ZTS13heuristic_nhp @86 DATA
+    _ZTS9heuristic @87 DATA
+    _ZTSN3bfs4nodeE @88 DATA
+    _ZTSN3bfs8nhp_nodeE @89 DATA
+    _ZTV13heuristic_nhp @90 DATA
+    _ZTV9heuristic @91 DATA
+    _ZTVN3bfs4nodeE @92 DATA
+    _ZTVN3bfs8nhp_nodeE @93 DATA
+    makemove @94

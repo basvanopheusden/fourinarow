@@ -2,104 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="data_struct.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="heuristic.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2109" topLine="1" />
+			<Cursor1 position="2627" topLine="28" />
 		</Cursor>
 	</File>
-	<File name="board.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="fmri_values.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5775" topLine="224" />
-		</Cursor>
-	</File>
-	<File name="data_struct.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1649" topLine="57" />
-		</Cursor>
-	</File>
-	<File name="heuristic.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="176" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Experiment agent code\heuristic_old.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="135" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="heuristic.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5643" topLine="201" />
-		</Cursor>
-	</File>
-	<File name="Experiment agent code\heuristic_old.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1479" topLine="52" />
-		</Cursor>
-	</File>
-	<File name="fmri_values.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="401" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="heuristic_nhp.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="864" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="Peak code\bfs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4662" topLine="181" />
-		</Cursor>
-	</File>
-	<File name="Experiment agent code\bfs_old.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="177" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="bfs.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="142" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="dfs.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="24" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="eye_trace.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="732" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Peak code\heuristic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="203" topLine="230" />
-		</Cursor>
-	</File>
-	<File name="heuristic_nhp.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="158" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4068" topLine="131" />
-		</Cursor>
-	</File>
-	<File name="bfs_nhp.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="617" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="Peak code\features_all.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="67" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="bfs.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4531" topLine="162" />
+			<Cursor1 position="3079" topLine="70" />
 		</Cursor>
 	</File>
 	<File name="Peak code\bfs.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -107,14 +17,109 @@
 			<Cursor1 position="63" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="Peak code\bfs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4662" topLine="181" />
+		</Cursor>
+	</File>
+	<File name="utils.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="716" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Experiment agent code\heuristic_old.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="135" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="heuristic_nhp.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="864" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="dfs.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="24" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="bfs.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2699" topLine="99" />
+		</Cursor>
+	</File>
+	<File name="Experiment agent code\bfs_old.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="177" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="features_all.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="254" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="Peak code\heuristic.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="140" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="features_all.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="data_struct.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="431" topLine="0" />
+			<Cursor1 position="1371" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="heuristic.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10022" topLine="321" />
+		</Cursor>
+	</File>
+	<File name="Peak code\features_all.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="67" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="heuristic_nhp.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="134" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9454" topLine="238" />
+		</Cursor>
+	</File>
+	<File name="board.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7263" topLine="241" />
+		</Cursor>
+	</File>
+	<File name="Experiment agent code\heuristic_old.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1479" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="Peak code\heuristic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="203" topLine="230" />
+		</Cursor>
+	</File>
+	<File name="bfs.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="142" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="bfs_nhp.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="617" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="data_struct.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2585" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="eye_trace.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="732" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

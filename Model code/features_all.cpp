@@ -2,7 +2,7 @@
 #include "heuristic.h"
 
 heuristic::heuristic(): Nfeatures(731), stopping_thresh(7), pruning_thresh(5),
-gamma(0.01) ,lapse_rate(0.01), opp_scale(1),
+gamma(0.01) ,lapse_rate(0.01), opp_scale(1),center_weight(1),
 w_act{0.8,0.2,3.5,6,0.8,0.2,3.5,6,0.8,0.2,3.5,6,0.8,0.2,3.5,6,0},
 w_pass{0.8,0.2,3.5,6,0.8,0.2,3.5,6,0.8,0.2,3.5,6,0.8,0.2,3.5,6,0},
 delta{0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2},
